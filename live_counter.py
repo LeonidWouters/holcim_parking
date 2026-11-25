@@ -117,7 +117,7 @@ def main() -> None:
     try:
         while True:
             frame_rgb = picam2.capture_array("main")
-            frame_bgr = frame_rgb[:, :, ::-1]
+            frame_bgr = frame_rgb
             resized = cv2.resize(frame_bgr, INFER_SIZE, interpolation=cv2.INTER_LINEAR)
 
             results = model.track(
